@@ -1,0 +1,12 @@
+---
+import BaseLayoutAstroComponent from "../../layouts/BaseLayout.astro";
+
+import * as indexContent from "../../content/sr-Latn/index.md";
+
+const compiled = await indexContent.compiledContent();
+import "../index.css";
+---
+
+<BaseLayoutAstroComponent>
+	<Fragment set:html={compiled} />
+</BaseLayoutAstroComponent>

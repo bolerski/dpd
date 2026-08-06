@@ -1,0 +1,61 @@
+---
+type Lang = "sr-Cyrl" | "sr-Latn" | "en";
+
+const localisedMenu = {
+	"sr-Cyrl": [
+		{ slug: "Почетна", href: "/" },
+		{ slug: "О нама", href: "/o-nama" },
+		{ slug: "Контакт", href: "/kontakt" },
+	],
+	"sr-Latn": [
+		{ slug: "pocetna", href: "/sr-Latn" },
+		{ slug: "o-nama", href: "/sr-Latn/o-nama" },
+		{ slug: "kontakt", href: "/sr-Latn/kontakt" },
+	],
+	en: [
+		{ slug: "home", href: "/en" },
+		{ slug: "about-us", href: "/en/about-us" },
+		{ slug: "contact", href: "/en/contact" },
+	],
+};
+
+const languageSwitcher = {
+	"sr-Cyrl": "ћирилица",
+	"sr-Latn": "latinica",
+	en: "english",
+};
+
+const defaultLocale: Lang = "sr-Cyrl";
+---
+
+<html lang={Astro.currentLocale}>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+		<nav>
+			{
+				localisedMenu[Astro.currentLocale as Lang].map(({ slug, href }) => (
+					<a href={href}>{slug}</a>
+				))
+			}
+		</nav>
+		<nav>
+			{
+				Object.keys(languageSwitcher).map((lang) => {
+					const isOptionDefaultLocale = lang === defaultLocale;
+					return Astro.currentLocale === lang ? (
+						languageSwitcher[lang as Lang]
+					) : (
+						<a href={isOptionDefaultLocale ? "/" : `/${lang}`}>{languageSwitcher[lang as Lang]}</a>
+					);
+				})
+			}
+		</nav>
+		<slot />
+	</body>
+</html>
