@@ -1,4 +1,4 @@
-name: Deploy Astro to Cloudflare
+name: Deploy to astro environment
 
 on:
   push:
