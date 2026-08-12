@@ -9,28 +9,10 @@ jobs:
   # 1. Automatic Deploy to STAGING
   # --------------------------------------------------
   deploy-staging:
-    name: Build & Deploy (Staging)
-    runs-on: ubuntu-latest
-    environment:
-      name: staging
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 24
-          cache: "npm"
-
-      - run: npm ci
-      - run: npm run build
-
-      - name: Upload to Cloudflare Pages (Staging)
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist --project-name=${{ vars.PROJECT_NAME }}
+    uses: ./.github/workflows/astro-deploy.yml
+    with:
+      env: staging
+      project-name: dpd-staging
 
   # --------------------------------------------------
   # 2. Manual Gate -> Deploy to PRODUCTION
@@ -38,24 +20,7 @@ jobs:
   deploy-production:
     name: Build & Deploy (Production)
     needs: deploy-staging
-    runs-on: ubuntu-latest
-    environment:
-      name: production
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 24
-          cache: "npm"
-
-      - run: npm ci
-      - run: npm run build
-
-      - name: Upload to Cloudflare Pages (Production)
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist --project-name=${{ vars.PROJECT_NAME }}
+    uses: ./.github/workflows/astro-deploy.yml
+    with:
+      env: production
+      project-name: dpd
