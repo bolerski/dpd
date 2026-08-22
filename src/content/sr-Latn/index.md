@@ -8,6 +8,4 @@ Kroz volonterske akcije, edukativne programe, sportske i kulturne manifestacije,
 - kontaktirajte nas
 - ušće dobrih ljudi
 
-![друштво-под-дудом](../dpd-bg-image.png)
-
 Pratite naše aktivnosti na društvenim mrežama
