@@ -1,5 +1,7 @@
 .bg-image-container {
-	background-image: url("../content/dpd-bg-image.png");
+	/* Vite automatically bundles, hashes, and optimizes this in build/preview */
+	/* background-image: url("../assets/dpd-bg-image.png"); */
+	background-image: url("../assets/dpd-bg-image.png");
 	background-position: bottom;
 	background-repeat: no-repeat;
 	background-size: cover;
