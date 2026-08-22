@@ -1,0 +1,35 @@
+---
+import { defaultLocale, type Lang } from "../utils/constants";
+const languageSwitcher = {
+	"sr-Cyrl": "Ћирилица",
+	"sr-Latn": "Latinica",
+	en: "English",
+};
+---
+
+<style>
+	.language-selector {
+		display: flex;
+		font-size: 1rem;
+		list-style: none;
+		gap: 0.5rem;
+	}
+	.language-selector a {
+		text-decoration-line: none;
+	}
+	.language-selector a:hover {
+		color: #6a994e;
+	}
+</style>
+<nav class="language-selector">
+	{
+		Object.keys(languageSwitcher).map((lang) => {
+			const isOptionDefaultLocale = lang === defaultLocale;
+			return Astro.currentLocale === lang ? (
+				<span>{languageSwitcher[lang as Lang]}</span>
+			) : (
+				<a href={isOptionDefaultLocale ? "/" : `/${lang}`}>{languageSwitcher[lang as Lang]}</a>
+			);
+		})
+	}
+</nav>
