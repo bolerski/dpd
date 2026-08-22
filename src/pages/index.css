@@ -1,12 +1,53 @@
-img {
-	max-width: 100%;
-	height: auto;
-	display: block;
-	margin: 0 auto;
+.bg-image-container {
+	background-image: url("../content/dpd-bg-image.png");
+	background-position: bottom;
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 450px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+h1 {
+	color: #ffffff;
+	font-size: 1.875rem;
+	font-weight: 600;
+	text-align: center;
+}
+
+p:first-of-type {
+	color: #6a994e;
+	font-size: 1rem;
+	font-weight: 600;
+	margin: 1rem 0;
+}
+
+main ul {
+	display: flex;
+	flex-direction: column;
+	gap: 0.625rem;
+}
+
+main ul li {
+	background-color: #6d7881;
+	text-align: center;
+	text-transform: uppercase;
+	color: #ffffff;
+	padding: 0.5rem 0;
+	font-weight: 600;
+}
+
+main ul li a {
+	text-decoration: none;
 }
 
 @media (width > 768px) {
-	img {
-		max-width: 48rem;
+	main ul {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+
+	main ul li {
 	}
 }

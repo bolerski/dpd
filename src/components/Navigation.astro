@@ -1,0 +1,38 @@
+---
+import { localisedMenu, type Lang } from "../utils/constants";
+---
+
+<style>
+	.navigation-items {
+		display: flex;
+		font-size: 1rem;
+		list-style: none;
+		gap: 0.5rem;
+	}
+
+	.navigation-item {
+		padding: 0.5rem 0;
+	}
+
+	.navigation-link {
+		text-decoration: none;
+		text-decoration-line: none;
+	}
+
+	.navigation-item:hover {
+		color: #6a994e;
+	}
+</style>
+<nav>
+	<ul class="navigation-items">
+		{
+			localisedMenu[Astro.currentLocale as Lang].map(({ slug, href }) => (
+				<li class="navigation-item">
+					<a class="navigation-link" href={href}>
+						{slug}
+					</a>
+				</li>
+			))
+		}
+	</ul>
+</nav>
