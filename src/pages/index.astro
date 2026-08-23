@@ -3,12 +3,11 @@ import BaseLayoutAstroComponent from "../layouts/BaseLayout.astro";
 import * as indexContent from "../content/index.md";
 const compiled = await indexContent.compiledContent();
 import "./index.css";
+import HomePageTopContent from "../components/HomePageTopContent.astro";
 ---
 
 <BaseLayoutAstroComponent>
-	<div class="bg-image-container">
-		<h1>Подстичемо заједништво и чување природе кроз активизам и едукацију.</h1>
-	</div>
+	<HomePageTopContent title="Подстичемо заједништво и чување природе кроз активизам и едукацију." />
 	<main>
 		<Fragment set:html={compiled} />
 	</main>
