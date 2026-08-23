@@ -24,6 +24,10 @@ main ul li a {
 	text-decoration: none;
 }
 
+main {
+	margin-bottom: 0.5rem;
+}
+
 @media (width > 768px) {
 	main ul {
 		display: grid;

@@ -4,6 +4,7 @@ import * as indexContent from "../../content/sr-Latn/index.md";
 const compiled = await indexContent.compiledContent();
 import "../index.css";
 import HomePageTopContent from "../../components/HomePageTopContent.astro";
+import HomeFooter from "../../components/HomeFooter.astro";
 ---
 
 <BaseLayoutAstroComponent>
@@ -13,4 +14,5 @@ import HomePageTopContent from "../../components/HomePageTopContent.astro";
 	<main>
 		<Fragment set:html={compiled} />
 	</main>
+	<HomeFooter title="Pratite naše aktivnosti na društvenim mrežama" />
 </BaseLayoutAstroComponent>

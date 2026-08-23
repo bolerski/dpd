@@ -5,5 +5,3 @@ Kroz volonterske akcije, edukativne programe, sportske i kulturne manifestacije,
 - naše aktivnosti
 - kontaktirajte nas
 - ušće dobrih ljudi
-
-Pratite naše aktivnosti na društvenim mrežama
