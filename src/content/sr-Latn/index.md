@@ -2,6 +2,6 @@ Udruženje „Društvo pod dudom“ iz Morovića je nevladino i neprofitno udru�
 Kroz volonterske akcije, edukativne programe, sportske i kulturne manifestacije, radimo na stvaranju zdravijeg i odgovornijeg okruženja za sve generacije.
 
 - ko smo mi
-- naše aktivnosti
+- [naše aktivnosti](/sr-Latn/sta-radimo)
 - kontaktirajte nas
 - ušće dobrih ljudi

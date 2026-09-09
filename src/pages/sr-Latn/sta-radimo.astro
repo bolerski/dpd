@@ -1,0 +1,18 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import Blog from "../../components/Blog.astro";
+import GreenHeading from "../../components/GreenHeading.astro";
+
+const posts = await getCollection("blog", (entry) => {
+	return entry.data.locale === "sr-Latn";
+});
+---
+
+<BaseLayout>
+	<main>
+		<!-- <h1>🌿 Vidljivi smo kroz ono što radimo, ne kroz reči.</h1> -->
+		<GreenHeading>🌿 Vidljivi smo kroz ono što radimo, ne kroz reči.</GreenHeading>
+		<Blog posts={posts} />
+	</main>
+</BaseLayout>
