@@ -1,5 +1,123 @@
 ---
+import GreenHeading from "../../components/GreenHeading.astro";
 import BaseLayoutAstroComponent from "../../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import aboutUsImage from "../../assets/o-nama.jpg";
+import DescriptionList from "../../components/DescriptionList.astro";
+import DescriptionItem from "../../components/DescriptionItem.astro";
+import "../../styles/about-us.css";
 ---
 
-<BaseLayoutAstroComponent>o nama breeee</BaseLayoutAstroComponent>
+<BaseLayoutAstroComponent>
+	<GreenHeading>🌿 Zajedno čuvamo prirodu. Zajedno gradimo odgovornu zajednicu. </GreenHeading>
+	<main>
+		<div class="image-container">
+			<Image src={aboutUsImage} alt="Друштво под дудом - о нама" />
+		</div>
+
+		<p class="about-us-description">
+			Udruženje „Društvo pod dudom“ Morović je nevladino i neprofitno udruženje osnovano 2024.
+			godine sa ciljem zaštite i unapređenja životne sredine, razvoja ruralne zajednice i
+			podsticanja aktivnog učešća građana u očuvanju prirode. Kroz volonterske akcije, edukativne
+			programe i događaje u prirodi, radimo na konkretnim promenama u našoj zajednici. Verujemo da
+			odgovornost prema životnoj sredini počinje u sopstvenom dvorištu, ulici, selu.
+		</p>
+		<section class="foundations" id="foundations">
+			<h3>Temelji našeg rada su:</h3>
+			<div class="description-list-container">
+				<DescriptionList
+					items={["VOLONTERIZAM", "TRANSPARENTNOST", "SOLIDARNOST", "AKTIVIZAM"]}
+					desktopColumnSize={4}
+				/>
+			</div>
+		</section>
+		<section class="goals" id="goals">
+			<h3>Naši ciljevi su:</h3>
+			<ul>
+				<li>🌱 Unapređenje zaštite životne sredine</li>
+				<li>🌱 Edukacija dece i mladih</li>
+				<li>🌱 Organizovanje volonterskih akcija</li>
+				<li>🌱 Podsticanje zdravih životnih navika</li>
+				<li>🌱 Razvoj ruralnog turizma</li>
+				<li>🌱 Podrška humanitarnim aktivnostima</li>
+			</ul>
+			<p class="highlight">
+				Poseban akcenat stavljamo na praktične aktivnosti – čišćenje prirodnih područja,
+				pošumljavanje, ekološke radionice, sportske manifestacije u prirodi i javne događaje koji
+				podstiču odgovorno ponašanje prema prirodnim resursima.
+			</p>
+		</section>
+		<section class="legal-description">
+			<h3>
+				Udruženje „Društvo pod dudom“ Morović je organizovano kao nevladino i neprofitno udruženje
+				zasnovano na principima demokratskog odlučivanja, transparentnosti i aktivnog učešća
+				članova.
+			</h3>
+			<p class="members">Organi Udruženja su:</p>
+			<div class="government">
+				<div>
+					<DescriptionItem>SKUPŠTINA</DescriptionItem>
+					<div class="desc-container">
+						<p>
+							<i
+								>Skupštinu čine svi članovi Udruženja i ona predstavlja najviši organ odlučivanja.
+							</i>
+						</p>
+						<p>
+							<i>
+								Skupština donosi Statut i druge opšte akte, usvaja plan i program rada, razmatra i
+								usvaja izveštaje o radu i finansijskom poslovanju, odlučuje o izboru i razrešenju
+								članova organa Udruženja, kao i o statusnim pitanjima i daljem razvoju organizacije.
+							</i>
+						</p>
+					</div>
+				</div>
+				<div>
+					<DescriptionItem>UPRAVNI ODBOR</DescriptionItem>
+					<div class="desc-container">
+						<p>
+							<i>
+								Upravni odbor je izvršni organ koji rukovodi radom Udruženja između dve sednice
+								Skupštine.
+							</i>
+						</p>
+						<p>
+							<i>
+								On organizuje aktivnosti, sprovodi odluke Skupštine, donosi operativne i finansijske
+								odluke i stara se o ostvarivanju ciljeva Udruženja.
+							</i>
+						</p>
+						<p>
+							<i>
+								Predsednik Upravnog odbora zastupa Udruženje u pravnom prometu i odgovoran je za
+								zakonitost rada, dok zamenik predsednika postupa u njegovom odsustvu.
+							</i>
+						</p>
+					</div>
+				</div>
+				<div>
+					<DescriptionItem>NADZORNI ODBOR</DescriptionItem>
+					<div class="desc-container">
+						<p>
+							<i>
+								Nadzorni odbor vrši kontrolu finansijskog poslovanja i nadzire zakonitost rada
+								Udruženja.
+							</i>
+						</p>
+						<p>
+							<i>
+								O uočenim nepravilnostima obaveštava Upravni odbor i Skupštinu, čime obezbeđuje
+								dodatni nivo odgovornosti i transparentnosti.
+							</i>
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<p class="disclaimer">
+			Rad Udruženja je javan. Članstvo i zainteresovana javnost se redovno obaveštavaju o
+			aktivnostima, odlukama i finansijskim izveštajima. Time se obezbeđuje poverenje, odgovornost i
+			dugoročna održivost organizacije.
+		</p>
+	</main>
+</BaseLayoutAstroComponent>

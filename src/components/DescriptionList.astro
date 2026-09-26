@@ -1,0 +1,34 @@
+---
+import DescriptionItem from "./DescriptionItem.astro";
+
+interface Props {
+	items: string[];
+	desktopColumnSize: number;
+}
+
+const { desktopColumnSize } = Astro.props;
+---
+
+<style define:vars={{ desktopColumnSize }}>
+	.description-list {
+		display: flex;
+		flex-direction: column;
+		gap: 0.625rem;
+	}
+
+	@media (width > 768px) {
+		.description-list {
+			display: grid;
+			grid-template-columns: repeat(var(--desktopColumnSize), 1fr);
+		}
+	}
+</style>
+<ul class="description-list">
+	{
+		Astro.props.items.map((item) => (
+			<li>
+				<DescriptionItem>{item}</DescriptionItem>
+			</li>
+		))
+	}
+</ul>

@@ -1,5 +1,129 @@
 ---
+import GreenHeading from "../../components/GreenHeading.astro";
 import BaseLayoutAstroComponent from "../../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import aboutUsImage from "../../assets/o-nama.jpg";
+import DescriptionList from "../../components/DescriptionList.astro";
+import DescriptionItem from "../../components/DescriptionItem.astro";
+import "../../styles/about-us.css";
 ---
 
-<BaseLayoutAstroComponent />
+<BaseLayoutAstroComponent>
+	<GreenHeading
+		>🌿 Together we protect nature. Together we build a responsible community.
+	</GreenHeading>
+	<main>
+		<div class="image-container">
+			<Image src={aboutUsImage} alt="Друштво под дудом - о нама" />
+		</div>
+
+		<p class="about-us-description">
+			The association „Društvo pod dudom“ Morović is a non-governmental, non-profit organization
+			founded in 2024 with the aim of protecting and improving the environment, developing the rural
+			community and encouraging active citizen participation in nature conservation. Through
+			volunteer actions, educational programs and outdoor events, we work on concrete changes in our
+			community. We believe that responsibility toward the environment begins in one’s own yard,
+			street and village.
+		</p>
+		<section class="foundations" id="foundations">
+			<h3>The foundations of our work are:</h3>
+			<div class="description-list-container">
+				<DescriptionList
+					items={["VOLUNTEERISM", "TRANSPARENCY", "SOLIDARITY", "ACTIVISM"]}
+					desktopColumnSize={4}
+				/>
+			</div>
+		</section>
+		<section class="goals" id="goals">
+			<h3>Our goals are:</h3>
+			<ul>
+				<li>🌱 Improving environmental protection</li>
+				<li>🌱 Educating children and youth</li>
+				<li>🌱 Organizing volunteer actions</li>
+				<li>🌱 Encouraging healthy lifestyle habits</li>
+				<li>🌱 Developing rural tourism</li>
+				<li>🌱 Supporting humanitarian activities</li>
+			</ul>
+			<p class="highlight">
+				We place special emphasis on practical activities – cleaning natural areas, afforestation,
+				ecological workshops, outdoor sporting events and public events that encourage responsible
+				behavior toward natural resources.
+			</p>
+		</section>
+		<section class="legal-description">
+			<h3>
+				The association „Društvo pod dudom“ Morović is organized as a non-governmental, non-profit
+				association based on the principles of democratic decision-making, transparency and active
+				member participation.
+			</h3>
+			<p class="members">The bodies of the Association are:</p>
+			<div class="government">
+				<div>
+					<DescriptionItem>ASSEMBLY</DescriptionItem>
+					<div class="desc-container">
+						<p>
+							<i>
+								The Assembly consists of all members of the Association and is the highest
+								decision-making body.
+							</i>
+						</p>
+						<p>
+							<i>
+								The Assembly adopts the Statute and other general acts, approves the work plan and
+								program, reviews and adopts reports on operations and financial management, decides
+								on the election and dismissal of members of the Association’s bodies, as well as on
+								status matters and the further development of the organization.
+							</i>
+						</p>
+					</div>
+				</div>
+				<div>
+					<DescriptionItem>MANAGING BOARD</DescriptionItem>
+					<div class="desc-container">
+						<p>
+							<i>
+								The Managing Board is the executive body that directs the work of the Association
+								between two Assembly sessions.
+							</i>
+						</p>
+						<p>
+							<i>
+								It organizes activities, implements the decisions of the Assembly, makes operational
+								and financial decisions and ensures the realization of the Association’s goals.
+							</i>
+						</p>
+						<p>
+							<i>
+								The President of the Managing Board represents the Association in legal matters and
+								is responsible for the legality of its work, while the Vice-President acts in his
+								absence.
+							</i>
+						</p>
+					</div>
+				</div>
+				<div>
+					<DescriptionItem>SUPERVISORY BOARD</DescriptionItem>
+					<div class="desc-container">
+						<p>
+							<i>
+								The Supervisory Board controls financial operations and oversees the legality of the
+								Association’s work.
+							</i>
+						</p>
+						<p>
+							<i>
+								It informs the Managing Board and the Assembly of any observed irregularities,
+								thereby providing an additional level of accountability and transparency.
+							</i>
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<p class="disclaimer">
+			The work of the Association is public. Members and the interested public are regularly
+			informed about activities, decisions and financial reports. This ensures trust, accountability
+			and the long-term sustainability of the organization.
+		</p>
+	</main>
+</BaseLayoutAstroComponent>
